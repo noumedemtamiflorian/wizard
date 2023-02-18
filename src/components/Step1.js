@@ -1,12 +1,20 @@
+// Importer le package React
 import React from "react";
 
+// Ce composant représente l'étape 1 de l'inscription
 const Step1 = ({ register, watch, onSubmit }) => {
+  // Récupérer le name
   const name = watch("name");
+
+  // Récupérer l'adresse email
   const email = watch("email");
+
+  // Récupérer l'âge
   const age = watch("age");
 
   return (
     <form onSubmit={onSubmit} className="form">
+      {/* Champ "Nom" */}
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Nom :
@@ -18,6 +26,7 @@ const Step1 = ({ register, watch, onSubmit }) => {
           className="form-control"
         />
       </div>
+      {/* Champ "Email" */}
       <div className="mb-3">
         <label htmlFor="email" className="form-label">
           Email :
@@ -29,6 +38,7 @@ const Step1 = ({ register, watch, onSubmit }) => {
           className="form-control"
         />
       </div>
+      {/* Champ "Âge" */}
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
           Age :
@@ -40,6 +50,7 @@ const Step1 = ({ register, watch, onSubmit }) => {
           className="form-control"
         />
       </div>
+      {/*  Bouton "Suivant" */}
       <button
         type="submit"
         disabled={!name || !email || !age}
